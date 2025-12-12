@@ -1,23 +1,30 @@
 import { Reveal } from "../components/ui/Reveal";
+import { SpotlightCard } from "../components/ui/SpotlightCard";
+import { Code2, Database, Cloud, Server, Activity } from "lucide-react";
 
 const skillCategories = [
     {
+        icon: Code2,
         title: "Backend & Languages",
         skills: ["Python", "FastAPI", "Node.js", "TypeScript", "AsyncIO", "REST", "gRPC", "WebSockets"]
     },
     {
+        icon: Database,
         title: "Databases",
         skills: ["PostgreSQL", "Redis", "MongoDB", "MySQL", "Query Optimization", "Indexing", "Schema Design", "ACID Transactions"]
     },
     {
+        icon: Server,
         title: "Systems & Architecture",
         skills: ["Microservices", "Distributed Systems", "Event-Driven Architecture", "Caching Strategies", "Load Balancing", "High Availability", "Rate Limiting", "API Gateway", "Observability"]
     },
     {
+        icon: Cloud,
         title: "Cloud & DevOps",
         skills: ["AWS (ECS, EC2, S3, CloudWatch, Lambda)", "Docker", "Terraform", "GitHub Actions", "CI/CD", "Infrastructure Automation"]
     },
     {
+        icon: Activity,
         title: "Testing & Reliability",
         skills: ["Pytest", "Integration Testing", "SLO/SLI Monitoring", "Incident Management", "Root Cause Analysis"]
     }
@@ -25,36 +32,45 @@ const skillCategories = [
 
 export const Skills = () => {
     return (
-        <section id="skills" className="py-32 px-4 md:px-10">
-            <div className="max-w-5xl mx-auto">
+        <section id="skills" className="py-32 px-4 sm:px-10">
+            <div className="max-w-7xl mx-auto">
                 <Reveal>
-                    <div className="flex items-center gap-4 mb-20">
-                        <div className="h-px w-20 bg-white/20"></div>
-                        <span className="text-white/40 font-mono tracking-widest uppercase text-sm">
-                            Technical Stack
-                        </span>
+                    <div className="mb-20">
+                        <h2 className="text-6xl font-bold mb-4 leading-tight">
+                            Technical <span className="text-primary">Stack</span>
+                        </h2>
+                        <p className="text-gray-400 text-xl max-w-2xl">
+                            Core technologies powering scalable, production-grade systems
+                        </p>
                     </div>
                 </Reveal>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {skillCategories.map((category, idx) => (
                         <Reveal key={idx} delay={idx * 0.1}>
-                            <div className="border border-white/5 p-6 hover:border-white/10 transition-colors">
-                                <h3 className="text-lg font-mono text-white/50 mb-4 tracking-wide">
+                            <SpotlightCard className="p-8 bg-white/5 border-white/10 h-full">
+                                {/* Icon */}
+                                <div className="mb-6 inline-flex p-4 rounded-2xl bg-primary/10">
+                                    <category.icon className="text-primary" size={32} />
+                                </div>
+
+                                {/* Title */}
+                                <h3 className="text-2xl font-bold mb-6">
                                     {category.title}
                                 </h3>
-                                
+
+                                {/* Skills List */}
                                 <div className="flex flex-wrap gap-2">
                                     {category.skills.map((skill, skillIdx) => (
                                         <span
                                             key={skillIdx}
-                                            className="text-xs font-mono text-white/30 border border-white/5 px-2 py-1 rounded hover:text-primary hover:border-primary/20 transition-colors cursor-default"
+                                            className="px-3 py-1.5 text-sm font-mono bg-white/5 text-gray-300 rounded border border-white/10 hover:border-primary/50 hover:text-primary transition-colors"
                                         >
                                             {skill}
                                         </span>
                                     ))}
                                 </div>
-                            </div>
+                            </SpotlightCard>
                         </Reveal>
                     ))}
                 </div>
