@@ -1,5 +1,6 @@
 import { Hero } from "./sections/Hero";
 import { About } from "./sections/About";
+import { Skills } from "./sections/Skills";
 import { Experience } from "./sections/Experience";
 import { Projects } from "./sections/Projects";
 import { Contact } from "./sections/Contact";
@@ -32,6 +33,7 @@ function App() {
           <main className="bg-background min-h-screen text-text-primary selection:bg-primary/30">
             <Hero />
             <About />
+            <Skills />
             <Experience />
             <Projects />
             <Contact />
