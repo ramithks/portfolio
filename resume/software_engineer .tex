@@ -1,0 +1,226 @@
+% Modern Single-Column Resume Template
+% Design Philosophy: Clean, ATS-friendly layout with professional navy accents
+% Font: Lato for modern, readable appearance
+% Spacing: Generous white space for better readability and visual hierarchy
+
+\documentclass[11pt,a4paper]{article}
+
+% ============= PACKAGES =============
+% inputenc is unnecessary on UTF-8 engines (XeLaTeX/LuaLaTeX)
+% \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lato} % Modern, professional sans-serif font
+\usepackage[hidelinks]{hyperref} % Clean hyperlinks without colored boxes
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[final]{microtype} % Better kerning & fewer broken ligatures
+
+% Encoding & hyphenation safety for ATS/PDF export
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=1000
+\emergencystretch=3em
+
+% ============= PAGE LAYOUT =============
+% Optimized margins for single-column layout - balanced white space
+\geometry{
+  top=0.3in,
+  bottom=0.5in,
+  left=0.65in,
+  right=0.65in,
+  nofoot
+}
+
+% ============= COLOR SCHEME =============
+% Professional navy palette - subtle yet distinctive
+\definecolor{navyblue}{RGB}{25, 55, 100}      % Primary: Section headers
+\definecolor{darkgray}{RGB}{60, 60, 60}       % Body text
+\definecolor{lightgray}{RGB}{120, 120, 120}   % Secondary text
+
+% ============= SECTION FORMATTING =============
+% Navy-colored section headers with subtle underline for visual separation
+\titleformat{\section}
+  {\color{navyblue}\Large\bfseries\raggedright}
+  {}{0em}
+  {}
+  [\color{navyblue}\titlerule]
+
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+
+% ============= LIST FORMATTING =============
+% Compact bullets with optimal spacing for content density
+\setlist[itemize]{
+  leftmargin=*,
+  itemsep=1pt,
+  topsep=3pt,
+  parsep=0pt,
+  partopsep=0pt,
+  label=\textbullet
+}
+
+% ============= CUSTOM COMMANDS =============
+% Consistent formatting for job titles and dates with proper alignment
+\newcommand{\resumeheading}[4]{
+  \noindent
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{\color{navyblue}#1} & \textit{\color{lightgray}#2} \\
+    \textit{#3} & \textit{\color{lightgray}#4}
+  \end{tabularx}\vspace{1pt}
+}
+
+% Project headings with tech stack emphasis
+\newcommand{\projectheading}[2]{
+  \textbf{\color{navyblue}#1} \hfill \textit{\color{lightgray}#2}
+  \vspace{-2pt}
+}
+
+% Skill category formatting for clean organization with consistent wrapping
+\newcommand{\skillcategory}[2]{
+  \textbf{\color{navyblue}#1:} \raggedright #2
+}
+
+% ============= DOCUMENT START =============
+\begin{document}
+\pagestyle{empty} % Clean layout without page numbers
+
+% ============= HEADER SECTION =============
+% Centered name with contact info - optimized for ATS parsing
+\begin{center}
+  {\Huge\bfseries\color{navyblue}RAMITH K S} \\[4pt]
+  {\Large\color{darkgray}Senior Backend Engineer} \\[8pt]
+  \color{darkgray}
+  \href{tel:+919481968808}{+91 9481968808} $|$ 
+  \href{mailto:ramithgowdakundoor123@gmail.com}{ramithgowdakundoor123@gmail.com} $|$ 
+  \href{https://www.linkedin.com/in/ramith-k-s}{LinkedIn: ramith-k-s} $|$ 
+  \href{https://github.com/ramithks}{GitHub: ramithks}
+\end{center}
+
+% ============= PROFESSIONAL SUMMARY =============
+\section{Professional Summary}
+\color{darkgray}
+{\small Senior Backend Engineer (4+ years) specializing in Python/FastAPI, Node.js, and distributed systems on AWS. Delivers scalable, low-latency microservices (sub-300ms P95), 4× query speedups, and platforms handling 10K+ daily requests. Strong in caching strategies, event-driven architecture, schema optimization, and leading teams to ship reliable production systems.}
+
+% ============= PROFESSIONAL EXPERIENCE =============
+\section{Professional Experience}
+\resumeheading{Zolnoi Innovations}{October 2024 -- Present}{Senior Backend Engineer}{Bengaluru}
+\vspace{2pt}
+\textit{\small Tech Stack: FastAPI, PostgreSQL, Redis, AWS, Docker, APScheduler}
+\vspace{2pt}
+\begin{itemize}
+\item Architected a multi-channel notification engine processing 5,000+ alerts/day with 99.5\% delivery reliability, reducing operational load and alert fatigue.
+\item Consolidated 200+ alert streams into digest summaries, cutting user noise by 75\% and improving engagement.
+\item Reduced API P95 latency from 800ms to 300ms (60\%) through Redis caching, optimized DB calls, and critical-path refactors.
+\item Shipped 15+ production features across microservices; raised test coverage to 85\%, preventing 30+ regressions.
+\item Achieved 4× faster queries via schema redesign, index tuning, and execution plan optimization.
+\end{itemize}
+
+\vspace{3pt}
+
+\resumeheading{JustPoll (Streetlab Internet Pvt Ltd)}{October 2021 -- March 2025}{Founder \& CTO}{Bengaluru}
+\vspace{1pt}
+\textit{\small Tech Stack: Node.js, TypeScript, PostgreSQL, Redis, AWS (ECS, S3), WebSockets, Docker}
+\vspace{2pt}
+\begin{itemize}
+\item Architected and scaled TypeScript backend serving 500+ beta users; improved query performance by 40\% via schema optimization and caching.
+\item Designed WebSocket infrastructure supporting real-time features with distributed state and connection lifecycle management.
+\item Cut deployment time by 60\% (45 \textrightarrow{} 15 mins) by introducing ECS autoscaling, CI/CD, and CloudWatch-driven observability.
+\item Built Redis-backed task queues with <200ms P95 latency, reducing incidents by 45\%.
+\item Led a 5-member engineering team, driving 20+ releases and improving user retention by 65\%.
+\end{itemize}
+
+\vspace{2pt}
+
+% ============= TECHNICAL SKILLS =============
+\section{Technical Skills}
+
+\skillcategory{Backend \& Languages}{Python, FastAPI, Node.js, TypeScript, AsyncIO, REST, gRPC, WebSockets}
+
+\vspace{2pt}
+
+\skillcategory{Databases}{PostgreSQL, Redis, MongoDB, MySQL, Query Optimization, Indexing, Schema Design, ACID Transactions}
+
+\vspace{2pt}
+
+\skillcategory{Systems \& Architecture}{Microservices, Distributed Systems, Event-Driven Architecture, Caching Strategies, Load Balancing, High Availability, Rate Limiting, API Gateway, Observability}
+
+\vspace{2pt}
+
+\skillcategory{Cloud \& DevOps}{AWS (ECS, EC2, S3, CloudWatch, Lambda), Docker, Terraform, GitHub Actions, CI/CD, Infrastructure Automation}
+
+\vspace{2pt}
+
+\skillcategory{Testing \& Reliability}{Pytest, Integration Testing, SLO/SLI Monitoring, Incident Management, Root Cause Analysis}
+
+\vspace{2pt}
+
+% ============= EDUCATION =============
+\section{Education}
+
+\textbf{\color{navyblue}Bachelor of Computer Applications} \hfill \textit{\color{lightgray}2018 -- 2021}\\
+Christ University, Bangalore \hfill CGPA: 3.3/4.0
+
+\vspace{2pt}
+
+% ============= RECOGNITION =============
+\section{Recognition}
+
+\begin{itemize}
+\item HackBangalore Winner 2024
+\item AWS Cloud Foundations Certified
+\item Open Source Contributor
+\end{itemize}
+
+\vspace{2pt}
+
+% ============= KEY PROJECTS =============
+\section{Key Projects}
+
+\projectheading{AlgoHabit | AI-Powered Learning Platform}{\href{https://algohabit.com}{algohabit.com} | 200+ Active Users}
+\vspace{1pt}
+\textit{\small Tech Stack: React, TypeScript, Supabase, OpenRouter AI, Razorpay, PWA}
+\vspace{2pt}
+\begin{itemize}
+\item Engineered React PWA achieving 95+ Lighthouse performance score with offline-first architecture using service workers for 100\% offline functionality.
+\item Integrated OpenRouter AI with intelligent caching layer reducing API costs by 70\%, processing 100+ user-uploaded syllabi with 90\% accuracy.
+\item Deployed Supabase backend with RLS securing 5,000+ user records; enabled zero-downtime Razorpay payments.
+\item Implemented gamification tracking 10,000+ XP transactions, improving 30-day retention by 60\%.
+\end{itemize}
+
+\vspace{7pt}
+
+\projectheading{Ledgerly | Smart Finance Tracker SaaS}{Personal Project}
+\vspace{1pt}
+\textit{\small Tech Stack: FastAPI, React, PostgreSQL, ARIMA, TF-IDF, Pytest}
+\vspace{2pt}
+\begin{itemize}
+\item Built FastAPI backend with ARIMA time-series forecasting predicting expenses 3 months ahead with 82\% accuracy.
+\item Implemented TF-IDF-based transaction categorization achieving 88\% classification accuracy across 50+ categories.
+\item Developed pytest suite covering 40+ endpoints with 92\% code coverage.
+\end{itemize}
+
+\vspace{7pt}
+
+\projectheading{AG-WALLET | Agricultural Supply Chain Platform}{Android Application}
+\vspace{1pt}
+\textit{\small Tech Stack: Android (Java), MySQL, Google Maps API}
+\vspace{2pt}
+\begin{itemize}
+\item Built Android app connecting farmers, distributors, and customers for transparent pricing and direct market access.
+\item Implemented real-time price monitoring enabling farmers to track distributor pricing and maximize profit margins.
+\item Integrated Google Maps API for location-based distributor discovery and rating system for quality-based selection.
+\end{itemize}
+
+\vspace{7pt}
+
+\projectheading{HelpMyBuddy | HackBangalore Winner 2024}{\href{https://github.com/SiliconNinjas/HelpMyBuddy}{GitHub Link}}
+\vspace{2pt}
+\begin{itemize}
+\item Developed React Native prototype connecting homeowners with service providers via geolocation matching within 5km.
+\item Built Node.js backend with booking system and real-time availability tracking.
+\end{itemize}
+
+\end{document}
