@@ -64,13 +64,13 @@ export const About = () => {
 
             {/* Education Grid */}
             <Reveal delay={0.2}>
-                <div className="text-2xl font-bold mb-8 flex items-center gap-3">
+                <div className="text-xl md:text-2xl font-bold mb-8 flex items-center gap-3">
                     <GraduationCap className="text-primary" />
                     Academic Timeline
                 </div>
-                <div className="grid md:grid-cols-3 gap-6 mb-24">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
                     {education.map((edu, idx) => (
-                        <SpotlightCard key={idx} className="p-8 bg-white/5 border-white/10">
+                        <SpotlightCard key={idx} className="p-6 sm:p-8 bg-white/5 border-white/10">
                             <div className="text-sm font-mono text-primary mb-2">{edu.year}</div>
                             <h3 className="text-xl font-bold mb-1">{edu.school}</h3>
                             <div className="text-gray-400 mb-4">{edu.degree}</div>
