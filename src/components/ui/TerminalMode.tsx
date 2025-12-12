@@ -10,7 +10,7 @@ interface TerminalModeProps {
 const fileSystem = {
   '~': {
     type: 'dir',
-    children: ['about', 'experience', 'projects', 'contact', 'readme.txt']
+    children: ['about', 'experience', 'projects', 'contact', 'skills', 'readme.txt']
   },
   '~/about': {
     type: 'dir',
@@ -27,6 +27,10 @@ const fileSystem = {
   '~/contact': {
     type: 'dir',
     children: ['email.txt', 'socials.json']
+  },
+  '~/skills': {
+    type: 'dir',
+    children: ['backend.txt', 'databases.txt', 'systems.txt', 'cloud.txt', 'testing.txt', 'all.json']
   }
 };
 
@@ -34,6 +38,12 @@ const fileContents: Record<string, string> = {
   '~/readme.txt': "Welcome to Ramith's Portfolio System V9.\nThis is a fully interactive terminal.\nNavigate using 'cd' and 'ls'. Read files with 'cat'.",
   '~/about/profile.txt': "Name: Ramith K S\nRole: Senior Backend Engineer\nFocus: Distributed Systems, High-Performance APIs.",
   '~/about/skills.txt': "Languages: Go, Rust, TypeScript, Python.\nTech: Kubernetes, Docker, AWS, Kafka, gRPC.",
+  '~/skills/backend.txt': "Backend & Languages:\n  - Python, FastAPI, Node.js, TypeScript\n  - AsyncIO, REST, gRPC, WebSockets",
+  '~/skills/databases.txt': "Databases:\n  - PostgreSQL, Redis, MongoDB, MySQL\n  - Query Optimization, Indexing, Schema Design, ACID Transactions",
+  '~/skills/systems.txt': "Systems & Architecture:\n  - Microservices, Distributed Systems\n  - Event-Driven Architecture, Caching Strategies\n  - Load Balancing, High Availability\n  - Rate Limiting, API Gateway, Observability",
+  '~/skills/cloud.txt': "Cloud & DevOps:\n  - AWS (ECS, EC2, S3, CloudWatch, Lambda)\n  - Docker, Terraform, GitHub Actions\n  - CI/CD, Infrastructure Automation",
+  '~/skills/testing.txt': "Testing & Reliability:\n  - Pytest, Integration Testing\n  - SLO/SLI Monitoring\n  - Incident Management, Root Cause Analysis",
+  '~/skills/all.json': "{\n  \"backend\": [\"Python\", \"FastAPI\", \"Node.js\", \"TypeScript\"],\n  \"databases\": [\"PostgreSQL\", \"Redis\", \"MongoDB\"],\n  \"cloud\": [\"AWS\", \"Docker\", \"Terraform\"]\n}",
   '~/experience/current_role.txt': "Position: Senior Backend Engineer\nLocation: Bangalore, India\nStack: Go, Microservices, Event-Driven Architecture.",
   '~/experience/history.log': "[2023] Promoted to Senior Engineer\n[2021] Joined as Backend Engineer\n[2019] Internship at TechCorp",
   '~/projects/portfolio_v9.txt': "The site you are looking at.\nBuilt with React, Tailwind, Framer Motion, and Three.js.",

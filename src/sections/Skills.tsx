@@ -48,14 +48,14 @@ export const Skills = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {skillCategories.map((category, idx) => (
                         <Reveal key={idx} delay={idx * 0.1}>
-                            <SpotlightCard className="p-8 bg-white/5 border-white/10 h-full">
+                            <SpotlightCard className="p-6 bg-white/5 border-white/10 h-full">
                                 {/* Icon */}
-                                <div className="mb-6 inline-flex p-4 rounded-2xl bg-primary/10">
-                                    <category.icon className="text-primary" size={32} />
+                                <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10">
+                                    <category.icon className="text-primary" size={24} />
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="text-2xl font-bold mb-6">
+                                <h3 className="text-xl font-bold mb-4">
                                     {category.title}
                                 </h3>
 
@@ -64,7 +64,7 @@ export const Skills = () => {
                                     {category.skills.map((skill, skillIdx) => (
                                         <span
                                             key={skillIdx}
-                                            className="px-3 py-1.5 text-sm font-mono bg-white/5 text-gray-300 rounded border border-white/10 hover:border-primary/50 hover:text-primary transition-colors"
+                                            className="px-2.5 py-1 text-xs font-mono bg-white/5 text-gray-300 rounded border border-white/10 hover:border-primary/50 hover:text-primary transition-colors"
                                         >
                                             {skill}
                                         </span>
