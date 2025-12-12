@@ -1,5 +1,4 @@
 import { Reveal } from "../components/ui/Reveal";
-import { Terminal } from "lucide-react";
 
 const skillCategories = [
     {
@@ -26,67 +25,39 @@ const skillCategories = [
 
 export const Skills = () => {
     return (
-        <section id="skills" className="py-32 px-4 sm:px-10">
-            <div className="max-w-7xl mx-auto">
+        <section id="skills" className="py-32 px-4 md:px-10">
+            <div className="max-w-5xl mx-auto">
                 <Reveal>
-                    <div className="mb-16">
-                        {/* Terminal-style header */}
-                        <div className="flex items-center gap-3 mb-4">
-                            <Terminal className="text-primary" size={32} />
-                            <h2 className="text-4xl md:text-5xl font-bold">
-                                <span className="text-gray-500">$</span> cat technical_skills<span className="text-primary">.json</span>
-                            </h2>
-                        </div>
-                        <p className="text-gray-400 text-lg ml-11">
-                            Core technologies and methodologies for building scalable systems
-                        </p>
+                    <div className="flex items-center gap-4 mb-20">
+                        <div className="h-px w-20 bg-white/20"></div>
+                        <span className="text-white/40 font-mono tracking-widest uppercase text-sm">
+                            Technical Stack
+                        </span>
                     </div>
                 </Reveal>
 
-                <div className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-6">
                     {skillCategories.map((category, idx) => (
                         <Reveal key={idx} delay={idx * 0.1}>
-                            <div className="group relative bg-gradient-to-r from-gray-900/60 to-gray-900/30 border border-gray-800/70 rounded-lg p-6 hover:border-primary/40 transition-all duration-300">
-                                {/* Category header - terminal style */}
-                                <div className="flex items-start gap-4 mb-4">
-                                    <span className="text-primary font-mono text-sm mt-1">{">"}</span>
-                                    <div className="flex-1">
-                                        <h3 className="text-xl font-bold text-white mb-3 font-mono">
-                                            "{category.title}"<span className="text-primary">:</span>
-                                        </h3>
-                                        
-                                        {/* Skills grid */}
-                                        <div className="flex flex-wrap gap-2">
-                                            {category.skills.map((skill, skillIdx) => (
-                                                <span
-                                                    key={skillIdx}
-                                                    className="px-3 py-1.5 text-sm font-mono bg-black/40 text-gray-300 rounded border border-gray-700/50 hover:border-primary/60 hover:text-primary hover:bg-black/60 transition-all duration-200"
-                                                >
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
+                            <div className="border border-white/5 p-6 hover:border-white/10 transition-colors">
+                                <h3 className="text-lg font-mono text-white/50 mb-4 tracking-wide">
+                                    {category.title}
+                                </h3>
+                                
+                                <div className="flex flex-wrap gap-2">
+                                    {category.skills.map((skill, skillIdx) => (
+                                        <span
+                                            key={skillIdx}
+                                            className="text-xs font-mono text-white/30 border border-white/5 px-2 py-1 rounded hover:text-primary hover:border-primary/20 transition-colors cursor-default"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
                                 </div>
-
-                                {/* Subtle line separator */}
-                                {idx !== skillCategories.length - 1 && (
-                                    <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
-                                )}
                             </div>
                         </Reveal>
                     ))}
                 </div>
-
-                {/* Terminal prompt footer */}
-                <Reveal delay={0.6}>
-                    <div className="mt-8 text-gray-500 font-mono text-sm flex items-center gap-2">
-                        <span className="text-primary">ramith@portfolio</span>
-                        <span>~</span>
-                        <span className="text-gray-600">%</span>
-                        <span className="animate-pulse">_</span>
-                    </div>
-                </Reveal>
             </div>
         </section>
     );
