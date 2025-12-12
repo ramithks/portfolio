@@ -35,13 +35,11 @@ export const Skills = () => {
         <section id="skills" className="py-32 px-4 sm:px-10">
             <div className="max-w-7xl mx-auto">
                 <Reveal>
-                    <div className="mb-20">
-                        <h2 className="text-6xl font-bold mb-4 leading-tight">
-                            Technical <span className="text-primary">Stack</span>
-                        </h2>
-                        <p className="text-gray-400 text-xl max-w-2xl">
-                            Core technologies powering scalable, production-grade systems
-                        </p>
+                    <div className="flex items-center gap-4 mb-20">
+                        <div className="h-px w-20 bg-white/20"></div>
+                        <span className="text-white/40 font-mono tracking-widest uppercase text-sm">
+                            Technical Stack
+                        </span>
                     </div>
                 </Reveal>
 

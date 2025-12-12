@@ -60,20 +60,20 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
             
             {/* 1. Identity Zone */}
-            <div className="hidden md:flex flex-col">
+            <div className="hidden lg:flex flex-col">
                 <span className="font-bold text-lg tracking-tight text-white">RAMITH K S</span>
                 <span className="text-[10px] text-white/50 tracking-[0.2em] uppercase">Senior Engineer</span>
             </div>
 
-            {/* 2. Navigation Zone (Center) */}
-            <nav className="flex items-center gap-1 p-1 bg-white/5 rounded-full border border-white/5 mx-auto md:mx-0">
+            {/* 2. Navigation Zone (Center) - Responsive */}
+            <nav className="flex items-center gap-0.5 sm:gap-1 p-1 bg-white/5 rounded-full border border-white/5 mx-auto lg:mx-0">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setActiveTab(link.id)}
                   className={cn(
-                    "relative px-4 py-1.5 text-sm font-medium transition-colors rounded-full",
+                    "relative px-2 sm:px-3 md:px-4 py-1.5 text-[11px] sm:text-xs md:text-sm font-medium transition-colors rounded-full",
                     activeTab === link.id ? "text-black" : "text-white/70 hover:text-white"
                   )}
                 >
@@ -89,15 +89,8 @@ export const Navbar = () => {
               ))}
             </nav>
 
-            {/* 3. Connect Zone (Right) */}
-            <div className={cn(
-                "hidden md:flex items-center gap-4 transition-all",
-                !scrolled && "opacity-0 translate-x-10 pointer-events-none" // Only show actions when scrolled or always? Let's hide when top to be clean
-            )}>
-                {/* Actually, user might want them always visible. Let's make them always visible but subtle. */}
-            </div>
-            
-            <div className="hidden md:flex items-center gap-3">
+            {/* 3. Connect Zone (Right) - Hidden on mobile */}
+            <div className="hidden lg:flex items-center gap-3">
                 <a 
                     href="https://github.com/ramithks" target="_blank" rel="noreferrer"
                     className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
