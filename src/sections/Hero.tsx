@@ -4,13 +4,13 @@ import { ArrowRight, Download } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center px-6 sm:px-10 md:px-20 overflow-hidden bg-black pt-20">
+        <section className="relative min-h-screen flex items-center px-4 md:px-20 overflow-hidden bg-black pt-20">
             {/* Background Texture */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
             </div>
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-center">
+            <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 
                 {/* Left Content: Typography */}
                 <div className="md:col-span-7 flex flex-col justify-center">
@@ -27,16 +27,16 @@ export const Hero = () => {
                             </span>
                         </div>
                         
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black leading-[0.85] tracking-tighter text-white mb-6">
+                        <h1 className="text-8xl md:text-[10rem] font-black leading-[0.85] tracking-tighter text-white mb-6">
                             RAMITH <br/>
                             <span className="text-white/20">K S.</span>
                         </h1>
                         
-                        <div className="flex flex-col gap-2 mb-8 md:mb-12 border-l-2 border-white/20 pl-4 md:pl-6">
+                        <div className="flex flex-col gap-2 mb-12 border-l-2 border-white/20 pl-6">
                             <div className="text-xl md:text-2xl font-light text-white/80">
                                 Senior Backend Engineer
                             </div>
-                            <div className="text-sm sm:text-base font-mono text-white/40 tracking-wider">
+                            <div className="text-sm font-mono text-white/40 tracking-wider">
                                 BACKEND ENGINEERING // HIGH-PERFORMANCE APIs // DISTRIBUTED SYSTEMS
                             </div>
                         </div>
@@ -48,12 +48,12 @@ export const Hero = () => {
                                     e.preventDefault();
                                     document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
                                 }}
-                                className="group flex items-center gap-2 bg-white text-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-bold hover:bg-primary transition-colors cursor-pointer text-sm sm:text-base"
+                                className="group flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-primary transition-colors cursor-pointer"
                             >
                                 Explore Work 
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </a>
-                            <a href="/ramithks_cv.pdf" download="Ramith_KS_CV.pdf" className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors text-sm sm:text-base">
+                            <a href="/ramithks_cv.pdf" download="Ramith_KS_CV.pdf" className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors">
                                 <Download size={18} />
                                 Resume
                             </a>

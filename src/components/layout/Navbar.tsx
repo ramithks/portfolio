@@ -66,48 +66,28 @@ export const Navbar = () => {
             </div>
 
             {/* 2. Navigation Zone (Center) */}
-            {/* Navigation Links */}
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="flex items-center gap-1 p-1 bg-white/5 rounded-full border border-white/5 mx-auto md:mx-0">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById(link.id)?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={() => setActiveTab(link.id)}
                   className={cn(
-                    "relative py-2 text-sm font-medium transition-colors cursor-pointer",
-                    activeTab === link.id
-                      ? "text-primary"
-                      : "text-white/60 hover:text-white"
+                    "relative px-4 py-1.5 text-sm font-medium transition-colors rounded-full",
+                    activeTab === link.id ? "text-black" : "text-white/70 hover:text-white"
                   )}
                 >
-                  {link.name}
                   {activeTab === link.id && (
                     <motion.div
-                      layoutId="activeTab"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      layoutId="active-pill"
+                      className="absolute inset-0 bg-white rounded-full z-0"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
+                  <span className="relative z-10">{link.name}</span>
                 </a>
               ))}
             </nav>
-
-            {/* Mobile Menu - Show name only */}
-            <div className="md:hidden flex items-center gap-4">
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="text-white/60 hover:text-white text-sm"
-              >
-                Contact
-              </a>
-            </div>
 
             {/* 3. Connect Zone (Right) */}
             <div className={cn(
