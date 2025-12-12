@@ -4,7 +4,7 @@ import { ArrowRight, Download } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center px-4 md:px-20 overflow-hidden bg-black pt-20">
+        <section className="relative min-h-screen flex items-center px-6 sm:px-10 md:px-20 overflow-hidden bg-black pt-20">
             {/* Background Texture */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
@@ -27,7 +27,7 @@ export const Hero = () => {
                             </span>
                         </div>
                         
-                        <h1 className="text-8xl md:text-[10rem] font-black leading-[0.85] tracking-tighter text-white mb-6">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black leading-[0.85] tracking-tighter text-white mb-6">
                             RAMITH <br/>
                             <span className="text-white/20">K S.</span>
                         </h1>
@@ -36,7 +36,7 @@ export const Hero = () => {
                             <div className="text-xl md:text-2xl font-light text-white/80">
                                 Senior Backend Engineer
                             </div>
-                            <div className="text-sm font-mono text-white/40 tracking-wider">
+                            <div className="text-sm sm:text-base font-mono text-white/40 tracking-wider">
                                 BACKEND ENGINEERING // HIGH-PERFORMANCE APIs // DISTRIBUTED SYSTEMS
                             </div>
                         </div>

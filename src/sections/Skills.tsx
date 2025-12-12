@@ -36,7 +36,7 @@ export const Skills = () => {
             <div className="max-w-7xl mx-auto">
                 <Reveal>
                     <div className="mb-20">
-                        <h2 className="text-6xl font-bold mb-4 leading-tight">
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
                             Technical <span className="text-primary">Stack</span>
                         </h2>
                         <p className="text-gray-400 text-xl max-w-2xl">

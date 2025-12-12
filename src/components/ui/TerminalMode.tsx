@@ -217,12 +217,12 @@ export const TerminalMode = ({ onExit }: TerminalModeProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[9000] flex items-center justify-center p-4 md:p-10 pointer-events-none">
+    <div className="fixed inset-0 z-[9000] flex items-center justify-center p-2 sm:p-4 md:p-10 pointer-events-none">
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="w-full max-w-4xl h-[80vh] bg-[#050505]/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/10 overflow-hidden flex flex-col font-mono text-sm pointer-events-auto ring-1 ring-black/50"
+        className="w-full max-w-4xl h-[90vh] sm:h-[85vh] md:h-[80vh] bg-[#050505]/95 backdrop-blur-xl rounded-lg md:rounded-xl shadow-2xl border border-white/10 overflow-hidden flex flex-col font-mono text-xs sm:text-sm pointer-events-auto ring-1 ring-black/50"
       >    
           {/* Mac-style Window Header */}
           <div className="bg-[#1f2335] px-4 py-3 flex items-center justify-between border-b border-gray-800">

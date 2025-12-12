@@ -14,13 +14,13 @@ export const Contact = () => {
                     <span className="text-primary font-mono tracking-widest uppercase text-sm">
                         Available for Opportunities
                     </span>
-                    <h2 className="text-[12vw] leading-[0.85] font-black tracking-tighter uppercase text-white mix-blend-exclusion">
+                    <h2 className="text-[20vw] sm:text-[15vw] md:text-[12vw] leading-[0.85] font-black tracking-tighter uppercase text-white mix-blend-exclusion">
                         GET IN<br/>TOUCH
                     </h2>
                 </div>
 
                 <div className="group relative inline-block">
-                    <a href="mailto:ramithgowdakundoor123@gmail.com" className="relative z-10 text-2xl md:text-5xl font-bold text-white/60 group-hover:text-white transition-colors duration-300 border-b border-white/20 pb-2 group-hover:border-white">
+                    <a href="mailto:ramithgowdakundoor123@gmail.com" className="relative z-10 text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white/60 group-hover:text-white transition-colors duration-300 border-b border-white/20 pb-2 group-hover:border-white break-all">
                         ramithgowdakundoor123@gmail.com
                     </a>
                 </div>

@@ -45,7 +45,7 @@ export const About = () => {
             <Reveal>
                 <div className="grid md:grid-cols-2 gap-16 mb-24">
                     <div>
-                        <h2 className="text-6xl font-bold mb-8 leading-tight">
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight">
                             Engineered for <br/>
                             <span className="text-primary">Scale.</span>
                         </h2>
