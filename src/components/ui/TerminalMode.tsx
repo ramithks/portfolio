@@ -35,21 +35,21 @@ const fileSystem = {
 };
 
 const fileContents: Record<string, string> = {
-  '~/readme.txt': "Welcome to Ramith's Portfolio System V9.\nThis is a fully interactive terminal.\nNavigate using 'cd' and 'ls'. Read files with 'cat'.",
+  '~/readme.txt': "Welcome to Ramith's Portfolio System V10.\nThis is a fully interactive terminal.\nNavigate using 'cd' and 'ls'. Read files with 'cat'.",
   '~/about/profile.txt': "Name: Ramith K S\nRole: Senior Backend Engineer\nFocus: Distributed Systems, High-Performance APIs.",
-  '~/about/skills.txt': "Languages: Go, Rust, TypeScript, Python.\nTech: Kubernetes, Docker, AWS, Kafka, gRPC.",
+  '~/about/skills.txt': "Backend: Python, FastAPI, Node.js, TypeScript.\nInfra: AWS, Docker, Terraform, Kubernetes.\nDatabases: PostgreSQL, Redis, MongoDB.",
   '~/skills/backend.txt': "Backend & Languages:\n  - Python, FastAPI, Node.js, TypeScript\n  - AsyncIO, REST, gRPC, WebSockets",
-  '~/skills/databases.txt': "Databases:\n  - PostgreSQL, Redis, MongoDB, MySQL\n  - Query Optimization, Indexing, Schema Design, ACID Transactions",
-  '~/skills/systems.txt': "Systems & Architecture:\n  - Microservices, Distributed Systems\n  - Event-Driven Architecture, Caching Strategies\n  - Load Balancing, High Availability\n  - Rate Limiting, API Gateway, Observability",
-  '~/skills/cloud.txt': "Cloud & DevOps:\n  - AWS (ECS, EC2, S3, CloudWatch, Lambda)\n  - Docker, Terraform, GitHub Actions\n  - CI/CD, Infrastructure Automation",
-  '~/skills/testing.txt': "Testing & Reliability:\n  - Pytest, Integration Testing\n  - SLO/SLI Monitoring\n  - Incident Management, Root Cause Analysis",
+  '~/skills/databases.txt': "Databases:\n  - PostgreSQL, Redis, MongoDB, MySQL\n  - Query Optimization, Indexing, Schema Design",
+  '~/skills/systems.txt': "Systems & Architecture:\n  - Microservices, Distributed Systems\n  - Caching, Load Balancing, Observability",
+  '~/skills/cloud.txt': "Cloud & DevOps:\n  - AWS (ECS, EC2, S3, Lambda)\n  - Docker, Terraform, CI/CD",
+  '~/skills/testing.txt': "Testing & Reliability:\n  - Pytest, Integration Testing\n  - SLO/SLI Monitoring, Incident Management",
   '~/skills/all.json': "{\n  \"backend\": [\"Python\", \"FastAPI\", \"Node.js\", \"TypeScript\"],\n  \"databases\": [\"PostgreSQL\", \"Redis\", \"MongoDB\"],\n  \"cloud\": [\"AWS\", \"Docker\", \"Terraform\"]\n}",
-  '~/experience/current_role.txt': "Position: Senior Backend Engineer\nLocation: Bangalore, India\nStack: Go, Microservices, Event-Driven Architecture.",
-  '~/experience/history.log': "[2023] Promoted to Senior Engineer\n[2021] Joined as Backend Engineer\n[2019] Internship at TechCorp",
-  '~/projects/portfolio_v9.txt': "The site you are looking at.\nBuilt with React, Tailwind, Framer Motion, and Three.js.",
+  '~/experience/current_role.txt': "Company: Zolnoi Innovations\nRole: Senior Backend Engineer\nAchievements: Sub-300ms P95 latency, 10K+ daily reqs.",
+  '~/experience/history.log': "[2024] Joined Zolnoi as Senior Backend Engineer\n[2021-2024] Founder & CTO at JustPoll\n[2021] Graduated from Christ University",
+  '~/projects/portfolio_v10.txt': "The site you are looking at.\nBuilt with React, Tailwind, and God Mode logic.",
   '~/projects/god_mode.exe': "BINARY FILE (God Mode Logic). Do not execute.",
-  '~/contact/email.txt': "ramithks@example.com",
-  '~/contact/socials.json': "{\n  \"github\": \"github.com/ramithks\",\n  \"linkedin\": \"linkedin.com/in/ramithks\"\n}"
+  '~/contact/email.txt': "ramithgowdakundoor123@gmail.com",
+  '~/contact/socials.json': "{\n  \"github\": \"github.com/ramithks\",\n  \"linkedin\": \"linkedin.com/in/ramith-k-s\"\n}"
 };
 
 export const TerminalMode = ({ onExit }: TerminalModeProps) => {

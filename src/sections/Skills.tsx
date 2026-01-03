@@ -9,6 +9,11 @@ const skillCategories = [
         skills: ["Python", "FastAPI", "Node.js", "TypeScript", "AsyncIO", "REST", "gRPC", "WebSockets"]
     },
     {
+        icon: Server, // Reusing icon or could use Layout/Smartphone icon if imported
+        title: "Frontend & Mobile",
+        skills: ["React", "Flutter", "React Native", "Progressive Web Apps", "Offline-First Architecture"]
+    },
+    {
         icon: Database,
         title: "Databases",
         skills: ["PostgreSQL", "Redis", "MongoDB", "MySQL", "Query Optimization", "Indexing", "Schema Design", "ACID Transactions"]
@@ -16,7 +21,7 @@ const skillCategories = [
     {
         icon: Server,
         title: "Systems & Architecture",
-        skills: ["Microservices", "Distributed Systems", "Event-Driven Architecture", "Caching Strategies", "Load Balancing", "High Availability", "Rate Limiting", "API Gateway", "Observability"]
+        skills: ["Microservices", "Distributed Systems", "Event-Driven Architecture", "Caching", "Load Balancing", "High Availability", "Rate Limiting", "API Gateway", "Observability"]
     },
     {
         icon: Cloud,

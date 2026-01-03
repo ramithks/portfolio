@@ -7,27 +7,26 @@ const experiences = [
     period: "Oct 2024 - Present",
     location: "Bengaluru",
     points: [
-      "Architected a multi-channel notification engine processing 5,000+ alerts/day with 99.5% delivery reliability, reducing operational load and alert fatigue.",
-      "Consolidated 200+ alert streams into digest summaries, cutting user noise by 75% and improving engagement.",
-      "Reduced API P95 latency from 800ms to 300ms (60%) through Redis caching, optimized DB calls, and critical-path refactors.",
-      "Shipped 15+ production features across microservices; raised test coverage to 85%, preventing 30+ regressions.",
-      "Achieved 4× faster queries via schema redesign, index tuning, and execution plan optimization."
+      "Architected and built AI-driven factory analytics backend processing 10,000+ daily requests using FastAPI, PostgreSQL, Redis, and MongoDB time-series storage.",
+      "Designed and implemented a multi-channel notification system from scratch (push, email, mobile) processing 5,000+ alerts per day with 99.5% reliability.",
+      "Slashed API P95 latency from 800ms to 300ms (60%) via strategic Redis caching and deep database query optimization.",
+      "Raised Pytest coverage to 85%, preventing 30+ production regressions while achieving 4× faster queries via schema redesign and indexing.",
+      "Orchestrated development across FastAPI microservices, Django Admin, and Flutter apps supporting Web, Android, and iOS."
     ],
-    tech: ["FastAPI", "PostgreSQL", "Redis", "AWS", "Docker", "APScheduler"]
+    tech: ["FastAPI", "PostgreSQL", "Redis", "MongoDB", "AWS", "Docker"]
   },
   {
     company: "JustPoll (Streetlab Internet Pvt Ltd)",
     role: "Founder & CTO",
-    period: "Oct 2021 - Mar 2025",
+    period: "Jul 2021 - Aug 2024",
     location: "Bengaluru",
     points: [
-      "Architected and scaled TypeScript backend serving 500+ beta users; improved query performance by 40% via schema optimization and caching.",
-      "Designed WebSocket infrastructure supporting real-time features with distributed state and connection lifecycle management.",
-      "Cut deployment time by 60% (45 → 15 mins) by introducing ECS autoscaling, CI/CD, and CloudWatch-driven observability.",
-      "Built Redis-backed task queues with <200ms P95 latency, reducing incidents by 45%.",
-      "Led a 5-member engineering team, driving 20+ releases and improving user retention by 65%."
+      "Founded and scaled a social media platform to 1,500+ Android and 600+ iOS users; architected TypeScript backend and Flutter mobile application.",
+      "Boosted query performance by 40% via schema optimization; cut deployment time by 60% with ECS autoscaling and CI/CD pipelines.",
+      "Deployed comprehensive monitoring with Grafana and Redis task queues, maintaining sub-200ms P95 latency and reducing production incidents by 45%.",
+      "Led 5-member engineering team through 20+ production releases; improved user retention by 65% through mentoring and architecture reviews."
     ],
-    tech: ["Node.js", "TypeScript", "PostgreSQL", "Redis", "AWS (ECS, S3)", "WebSockets", "Docker"]
+    tech: ["Node.js", "TypeScript", "PostgreSQL", "Redis", "AWS (ECS, S3)", "Flutter", "CI/CD"]
   }
 ];
 

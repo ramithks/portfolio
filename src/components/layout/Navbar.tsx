@@ -54,7 +54,7 @@ export const Navbar = () => {
       <div 
         className={cn(
           "max-w-7xl mx-auto rounded-full border border-transparent transition-all duration-300 pointer-events-auto",
-          scrolled && "bg-black/50 border-white/10 backdrop-blur-md shadow-lg pr-2 py-1 pl-6"
+          scrolled && "bg-black/50 border-white/10 backdrop-blur-md shadow-lg pr-4 py-1.5 pl-4 sm:pl-6"
         )}
       >
         <div className="flex items-center justify-between">
@@ -66,14 +66,14 @@ export const Navbar = () => {
             </div>
 
             {/* 2. Navigation Zone (Center) - Responsive */}
-            <nav className="flex items-center gap-0.5 sm:gap-1 p-1 bg-white/5 rounded-full border border-white/5 mx-auto lg:mx-0">
+            <nav className="flex items-center gap-0.5 sm:gap-1 p-1 bg-white/5 rounded-full border border-white/5 mx-auto lg:mx-0 overflow-x-auto no-scrollbar max-w-[90vw] sm:max-w-none">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setActiveTab(link.id)}
                   className={cn(
-                    "relative px-2 sm:px-3 md:px-4 py-1.5 text-[11px] sm:text-xs md:text-sm font-medium transition-colors rounded-full",
+                    "relative px-2.5 sm:px-3 md:px-4 py-1.5 text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-medium transition-colors rounded-full shrink-0",
                     activeTab === link.id ? "text-black" : "text-white/70 hover:text-white"
                   )}
                 >
@@ -95,13 +95,13 @@ export const Navbar = () => {
                     href="https://github.com/ramithks" target="_blank" rel="noreferrer"
                     className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
                 >
-                    <Github size={20} />
+                    <Github size={18} />
                 </a>
                 <a 
                     href="https://linkedin.com/in/ramith-k-s" target="_blank" rel="noreferrer"
                     className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
                 >
-                    <Linkedin size={20} />
+                    <Linkedin size={18} />
                 </a>
                 <a 
                     href="#contact"
