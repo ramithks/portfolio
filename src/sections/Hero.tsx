@@ -53,7 +53,7 @@ export const Hero = () => {
                                 Explore Work 
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </a>
-                            <a href="/ramithks_cv.pdf" download="Ramith_KS_CV.pdf" className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors">
+                            <a href="ramithks_cv.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors">
                                 <Download size={18} />
                                 Resume
                             </a>
