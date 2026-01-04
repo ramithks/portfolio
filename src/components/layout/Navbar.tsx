@@ -60,9 +60,14 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
             
             {/* 1. Identity Zone */}
-            <div className="hidden lg:flex flex-col">
-                <span className="font-bold text-lg tracking-tight text-white">RAMITH K S</span>
-                <span className="text-[10px] text-white/50 tracking-[0.2em] uppercase">Senior Engineer</span>
+            <div className="hidden lg:flex items-center gap-3">
+                <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center border border-white/10 group overflow-hidden">
+                    <span className="text-[10px] font-black font-mono text-primary group-hover:scale-110 transition-transform">RKS</span>
+                </div>
+                <div className="flex flex-col">
+                    <span className="font-bold text-sm tracking-tight text-white leading-none mb-1">RAMITH K S</span>
+                    <span className="text-[9px] text-white/40 tracking-[0.2em] uppercase leading-none">Senior Engineer</span>
+                </div>
             </div>
 
             {/* 2. Navigation Zone (Center) - Responsive */}
