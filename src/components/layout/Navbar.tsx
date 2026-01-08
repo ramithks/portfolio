@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 import { Github, Linkedin } from "lucide-react";
+import { trackNavigationClick, trackLinkClick, trackButtonClick } from "../../lib/analytics";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -76,7 +77,10 @@ export const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setActiveTab(link.id)}
+                  onClick={() => {
+                    setActiveTab(link.id);
+                    trackNavigationClick(link.id);
+                  }}
                   className={cn(
                     "relative px-2.5 sm:px-3 md:px-4 py-1.5 text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-medium transition-colors rounded-full shrink-0",
                     activeTab === link.id ? "text-black" : "text-white/70 hover:text-white"
@@ -97,19 +101,29 @@ export const Navbar = () => {
             {/* 3. Connect Zone (Right) - Hidden on mobile */}
             <div className="hidden lg:flex items-center gap-3">
                 <a 
-                    href="https://github.com/ramithks" target="_blank" rel="noreferrer"
+                    href="https://github.com/ramithks" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    onClick={() => trackLinkClick("https://github.com/ramithks", "GitHub", "social")}
                     className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
                 >
                     <Github size={18} />
                 </a>
                 <a 
-                    href="https://linkedin.com/in/ramith-k-s" target="_blank" rel="noreferrer"
+                    href="https://linkedin.com/in/ramith-k-s" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    onClick={() => trackLinkClick("https://linkedin.com/in/ramith-k-s", "LinkedIn", "social")}
                     className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
                 >
                     <Linkedin size={18} />
                 </a>
                 <a 
                     href="#contact"
+                    onClick={() => {
+                        trackNavigationClick("contact");
+                        trackButtonClick("Let's Talk", "navbar");
+                    }}
                     className="ml-2 px-4 py-1.5 bg-white text-black text-xs font-bold rounded-full hover:bg-gray-200 transition-colors"
                 >
                     LET'S TALK

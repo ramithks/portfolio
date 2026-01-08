@@ -1,4 +1,5 @@
 import { Reveal } from "../components/ui/Reveal";
+import { useSectionView } from "../hooks/useSectionView";
 
 const experiences = [
   {
@@ -31,8 +32,13 @@ const experiences = [
 ];
 
 export const Experience = () => {
+  const sectionRef = useSectionView({
+    sectionName: "Experience",
+    sectionId: "experience",
+  });
+
   return (
-    <section id="experience" className="py-32 px-4 md:px-10">
+    <section ref={sectionRef} id="experience" className="py-32 px-4 md:px-10">
       <div className="max-w-5xl mx-auto">
         <Reveal>
             <div className="flex items-center gap-4 mb-20">

@@ -4,6 +4,8 @@ import { Reveal } from "../components/ui/Reveal";
 import { TiltCard } from "../components/ui/TiltCard";
 import { useState } from "react";
 import { ProjectModal } from "../components/ui/ProjectModal";
+import { useSectionView } from "../hooks/useSectionView";
+import { trackLinkClick, trackButtonClick } from "../lib/analytics";
 
 const projects = [
   {
@@ -62,9 +64,22 @@ const projects = [
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const sectionRef = useSectionView({
+    sectionName: "Projects",
+    sectionId: "work",
+  });
+
+  const handleProjectClick = (project: typeof projects[0]) => {
+    trackButtonClick(`Project: ${project.title}`, "projects_section");
+    setSelectedProject(project);
+  };
+
+  const handleProjectLinkClick = (url: string, type: 'github' | 'external') => {
+    trackLinkClick(url, type === 'github' ? 'GitHub' : 'External Link', type === 'github' ? 'social' : 'external');
+  };
 
   return (
-    <section id="work" className="py-24 px-4 sm:px-10">
+    <section ref={sectionRef} id="work" className="py-24 px-4 sm:px-10">
       <div className="max-w-7xl mx-auto">
          <Reveal>
              <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">
@@ -75,7 +90,7 @@ export const Projects = () => {
          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
                 <Reveal key={index} delay={index * 0.1}>
-                    <div onClick={() => setSelectedProject(project)} className="cursor-pointer h-full"> 
+                    <div onClick={() => handleProjectClick(project)} className="cursor-pointer h-full"> 
                         <TiltCard>
                             <SpotlightCard className="group relative overflow-hidden flex flex-col justify-between h-full min-h-[300px] p-8 hover:border-primary/50 transition-all">
                                 
@@ -86,14 +101,32 @@ export const Projects = () => {
                                         </span>
                                         <div className="flex gap-2">
                                             {project.github && (
-                                                <div className="text-text-secondary hover:text-white transition-colors">
+                                                <a
+                                                    href={project.github}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        handleProjectLinkClick(project.github!, 'github');
+                                                    }}
+                                                    className="text-text-secondary hover:text-white transition-colors"
+                                                >
                                                     <Github size={20} />
-                                                </div>
+                                                </a>
                                             )}
                                             {project.link && (
-                                                <div className="text-text-secondary hover:text-white transition-colors">
+                                                <a
+                                                    href={project.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        handleProjectLinkClick(project.link!, 'external');
+                                                    }}
+                                                    className="text-text-secondary hover:text-white transition-colors"
+                                                >
                                                     <ExternalLink size={20} />
-                                                </div>
+                                                </a>
                                             )}
                                         </div>
                                     </div>

@@ -1,6 +1,7 @@
 import { SpotlightCard } from "../components/ui/SpotlightCard";
 import { GraduationCap } from "lucide-react";
 import { Reveal } from "../components/ui/Reveal";
+import { useSectionView } from "../hooks/useSectionView";
 
 const education = [
     {
@@ -37,8 +38,13 @@ const languages = [
 ];
 
 export const About = () => {
+  const sectionRef = useSectionView({
+    sectionName: "About",
+    sectionId: "about",
+  });
+
   return (
-    <section id="about" className="py-32 px-4 sm:px-10">
+    <section ref={sectionRef} id="about" className="py-32 px-4 sm:px-10">
         <div className="max-w-7xl mx-auto">
             
             {/* Intro */}

@@ -1,9 +1,24 @@
 import { Reveal } from "../components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
+import { useSectionView } from "../hooks/useSectionView";
+import { trackEmailClick, trackLinkClick } from "../lib/analytics";
 
 export const Contact = () => {
+  const sectionRef = useSectionView({
+    sectionName: "Contact",
+    sectionId: "contact",
+  });
+
+  const handleEmailClick = () => {
+    trackEmailClick("ramithgowdakundoor123@gmail.com", "contact_section");
+  };
+
+  const handleSocialLinkClick = (platform: string, url: string) => {
+    trackLinkClick(url, platform, "social");
+  };
+
   return (
-    <section id="contact" className="min-h-[80vh] bg-black text-white flex flex-col justify-between pt-32 pb-12 px-4 md:px-20 relative overflow-hidden">
+    <section ref={sectionRef} id="contact" className="min-h-[80vh] bg-black text-white flex flex-col justify-between pt-32 pb-12 px-4 md:px-20 relative overflow-hidden">
       
       {/* Background Noise */}
        <div className="absolute inset-0 bg-[noise] opacity-5 pointer-events-none" />
@@ -20,7 +35,11 @@ export const Contact = () => {
                 </div>
 
                 <div className="group relative inline-block">
-                    <a href="mailto:ramithgowdakundoor123@gmail.com" className="relative z-10 text-2xl md:text-5xl font-bold text-white/60 group-hover:text-white transition-colors duration-300 border-b border-white/20 pb-2 group-hover:border-white">
+                    <a 
+                        href="mailto:ramithgowdakundoor123@gmail.com" 
+                        onClick={handleEmailClick}
+                        className="relative z-10 text-2xl md:text-5xl font-bold text-white/60 group-hover:text-white transition-colors duration-300 border-b border-white/20 pb-2 group-hover:border-white"
+                    >
                         ramithgowdakundoor123@gmail.com
                     </a>
                 </div>
@@ -31,10 +50,22 @@ export const Contact = () => {
             <div className="flex flex-col gap-4">
                 <span className="text-xs text-white/30 uppercase tracking-widest">Socials</span>
                 <div className="flex flex-col gap-2">
-                    <a href="https://linkedin.com/in/ramith-k-s" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors">
+                    <a 
+                        href="https://linkedin.com/in/ramith-k-s" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        onClick={() => handleSocialLinkClick("LinkedIn", "https://linkedin.com/in/ramith-k-s")}
+                        className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+                    >
                         LinkedIn <ArrowUpRight size={14} />
                     </a>
-                    <a href="https://github.com/ramithks" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors">
+                    <a 
+                        href="https://github.com/ramithks" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        onClick={() => handleSocialLinkClick("GitHub", "https://github.com/ramithks")}
+                        className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+                    >
                         GitHub <ArrowUpRight size={14} />
                     </a>
                 </div>
