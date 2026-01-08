@@ -1,10 +1,25 @@
 import { motion } from "framer-motion";
 import profileImg from "../assets/profile_alt.jpg";
 import { ArrowRight, Download } from "lucide-react";
+import { useSectionView } from "../hooks/useSectionView";
+import { trackButtonClick, trackResumeDownload } from "../lib/analytics";
 
 export const Hero = () => {
+    const sectionRef = useSectionView({
+        sectionName: "Hero",
+        sectionId: "hero",
+    });
+
+    const handleExploreClick = () => {
+        trackButtonClick("Explore Work", "hero_section");
+    };
+
+    const handleResumeDownload = () => {
+        trackResumeDownload("ramithks_cv.pdf", "hero_section");
+    };
+
     return (
-        <section className="relative min-h-screen flex items-center px-4 md:px-20 overflow-hidden bg-black pt-20">
+        <section ref={sectionRef} id="hero" className="relative min-h-screen flex items-center px-4 md:px-20 overflow-hidden bg-black pt-20">
             {/* Background Texture */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
@@ -46,6 +61,7 @@ export const Hero = () => {
                                 href="#experience" 
                                 onClick={(e) => {
                                     e.preventDefault();
+                                    handleExploreClick();
                                     document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
                                 }}
                                 className="group flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-primary transition-colors cursor-pointer"
@@ -53,7 +69,13 @@ export const Hero = () => {
                                 Explore Work 
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </a>
-                            <a href="ramithks_cv.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors">
+                            <a 
+                                href="ramithks_cv.pdf" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                onClick={handleResumeDownload}
+                                className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors"
+                            >
                                 <Download size={18} />
                                 Resume
                             </a>

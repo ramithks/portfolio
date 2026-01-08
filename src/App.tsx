@@ -9,15 +9,14 @@ import { SmoothScroll } from "./components/ui/SmoothScroll";
 import { CustomCursor } from "./components/ui/CustomCursor";
 
 import { Navbar } from "./components/layout/Navbar";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 
 import { CommandPalette } from "./components/ui/CommandPalette";
 
 function App() {
   return (
-    <HelmetProvider>
-      <div className="bg-black min-h-screen text-white cursor-none selection:bg-primary/30">
-        <Helmet>
+    <div className="bg-black min-h-screen text-white cursor-none selection:bg-primary/30">
+      <Helmet>
           <title>Ramith K S | Senior Backend Engineer</title>
           <meta name="description" content="Portfolio of Ramith K S, a Senior Backend Engineer specializing in scalable distributed systems." />
           <meta property="og:title" content="Ramith K S | Senior Backend Engineer" />
@@ -39,8 +38,7 @@ function App() {
             <Contact />
           </main>
         </SmoothScroll>
-      </div>
-    </HelmetProvider>
+    </div>
   );
 }
 
