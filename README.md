@@ -4,6 +4,10 @@
 
 ![Portfolio Preview](public/vite.svg)
 
+## Live Portfolio
+
+- [https://ramithks.github.io/portfolio/](https://ramithks.github.io/portfolio/)
+
 ## 🚀 Overview
 
 This portfolio is not just a showcase of work; it's a demonstration of engineering capability. It features a custom "God Mode" command palette, interactive Terminal simulations, 3D particle systems, and high-performance animations, all wrapped in a minimalist, executive-grade design.

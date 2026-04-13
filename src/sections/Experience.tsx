@@ -3,8 +3,19 @@ import { useSectionView } from "../hooks/useSectionView";
 
 const experiences = [
   {
-    company: "Zolnoi Innovations",
+    company: "Thermo Fisher Scientific",
     role: "Senior Backend Engineer",
+    period: "Feb 2026 - Present",
+    location: "Bengaluru, Karnataka, India (Hybrid)",
+    points: [
+      "Design and scale backend services for high-reliability e-commerce checkout flows.",
+      "Build and optimize Python/FastAPI APIs on Kubernetes, improving performance, observability, and fault tolerance in collaboration with product, QA, and frontend teams."
+    ],
+    tech: ["Python", "FastAPI", "Kubernetes", "Kafka", "Grafana", "Microservices"]
+  },
+  {
+    company: "Zolnoi Innovations",
+    role: "Backend Engineer",
     period: "Oct 2024 - Present",
     location: "Bengaluru",
     points: [
